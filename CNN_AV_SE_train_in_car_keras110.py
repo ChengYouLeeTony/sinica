@@ -16,7 +16,7 @@ from keras.layers import Convolution2D, MaxPooling2D, Input
 from keras.optimizers import SGD, Adam, RMSprop, Adagrad, Nadam, Adamax, Adadelta
 # import matplotlib.pyplot as plt
 import scipy.io
-import time  
+import time
 import numpy as np
 import theano
 import h5py
@@ -28,7 +28,7 @@ import load_data_during_training_in_car
 import random
 import gc
 
-list_path = "/home/jchou/Projects/AudioVisual_SE/CNN_AudioVisual_SE/code"
+list_path = "/home/yulab/jchou/Projects/AudioVisual_SE/code"
 gen_list_name_main = "gpu1/data_concat_list/in_car_for_concat_"
 model_name = 'model_01'
 start_time = time.time()
@@ -88,12 +88,12 @@ model = Model(input=[main_input, auxiliary_input], output=[main_output, auxiliar
 
 nfold_weights_path = "gpu1/weights.best-{loss:.4f}.hdf5"
 checkpointer = ModelCheckpoint(nfold_weights_path, monitor='loss',save_best_only=False, mode='min')
-early_stopping = EarlyStopping(monitor='val_main_output_loss', patience=patience) 
+early_stopping = EarlyStopping(monitor='val_main_output_loss', patience=patience)
 
 for i in range(0, n_loop):
-	
+
 	print('prepare training data at loop ' + str(i) + '/' + str(n_loop))
-	
+
 	num_key_error = 0
 	start_time_tmp = time.time()
 	#generate num_lst (e.g. 200) lists for faster concatenating
@@ -192,7 +192,7 @@ for i in range(0, n_loop):
 
 	# print('data is prepared for training at loop ' + str(i) + '/' + str(n_loop))
 	print('START to train at loop ' + str(i) + '/' + str(n_loop))
-	
+
 	lrs = [0.0001, 0.00001, 0.000001]
 	for l in lrs:
 		print("learning rate at " + str(l))
@@ -205,6 +205,6 @@ for i in range(0, n_loop):
 	gc.collect()
 
 model.save('./gpu1/' + model_name + '.h5')  # creates a HDF5 file
-	
+
 end_time = time.time()
 print('The code for this file ran for %.2fm' % ((end_time - start_time) / 60.))
