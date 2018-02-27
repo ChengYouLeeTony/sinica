@@ -35,9 +35,9 @@ start_time = time.time()
 n_batch_size = 100 #1000 # max:~9k
 num_lst = 50
 get_train_data_loops = 100 #2000 # multiplier of num_lst max:~10k
-get_test_data_loops = 50 #500 # multiplier of num_lst max:~3.5k
+get_test_data_loops = 100 #500 # multiplier of num_lst max:~3.5k
 n_epoch = 5
-n_loop = 40
+n_loop = 3 #40
 patience = n_epoch
 # optimizer = RMSprop(lr=0.0001, rho=0.9, epsilon=1e-08, decay=0.0)
 loss_weights = {'main_output':np.array(1), 'aux_output':np.array(1)}
