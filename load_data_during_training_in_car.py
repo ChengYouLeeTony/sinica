@@ -6,7 +6,7 @@ import numpy as np
 import scipy.io
 import random
 import time
-top_path_parent = "/home/yulab/jchou/Projects/AudioVisual_SE/Preprocess" #server tony
+top_path_parent = "/home/yulab/jchou/Projects/AudioVisual_SE/Preprocess/Matlab" #server tony
 #top_path_parent = "/mnt/gv0/user_jchou/Projects/AudioVisual_SE/Preprocess/Matlab"  # server 242
 # top_path_parent = "/home/coolkiu/Projects/AudioVisual_SE/Preprocess/Matlab" # server 147
 
