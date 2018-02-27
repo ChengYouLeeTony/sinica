@@ -28,7 +28,7 @@ import load_data_during_training_in_car
 import random
 import gc
 
-list_path = "/home/yulab/jchou/Projects/AudioVisual_SE/code"  /home/tony180004/sinica
+list_path = "/home/yulab/jchou/Projects/AudioVisual_SE/code"
 gen_list_name_main = "gpu1/data_concat_list/in_car_for_concat_"
 model_name = 'model_01'
 start_time = time.time()
