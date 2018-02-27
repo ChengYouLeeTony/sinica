@@ -65,7 +65,7 @@ def gen_list(gen_list_name_pre, speaker, in_car, phase, np_noise_type_sets, np_S
 		gen_list_name = gen_list_name_pre + ("%03d" % i) + ".list"
 		text_file = open(gen_list_name, "w")
 
-		for j in range(0, get_train_data_loops/num_lst):
+		for j in range(0, int(get_train_data_loops/num_lst)):
 			# if j % 100 == 0:
 			# 	print('		iteration: ' + str(j))
 			noise_type = random.choice(np_noise_type_sets)
